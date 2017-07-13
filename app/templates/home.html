@@ -1,4 +1,36 @@
-<div class="btn btn-primary" ng-click="home.modalRoom()">Create Room</div>
-<div ng-repeat="x in home.roomList">
-  <button class="btn btn-deafult"><h4>{{x.name}}</h4></button>
+<header class="jumbotron header">
+  <h1 class="modal-header">Bloc Chat!</h1>
+<div clas="container">
+  <div class="row">
+    <div ng-repeat="x in home.roomList">
+      <div class="btn btn-deafult col-xs-2" ng-click="home.setRoom(x)"><h4>{{x.name}}</h4></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btn btn-primary col-xs-12" ng-click="home.modalRoom()"><h4>Create Room</h4></div>
+  </div>
+</div>
+</header>
+<h1 class="room-title">{{home.currentRoom.name}}</h1>
+<div class="chat-room col-xs-offset-2 col-sm-8">
+  <div ng-repeat="y in home.messages">
+    <div class="row" ng-show="!flip">
+      <blockquote class="modal-header header room">
+        <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
+          {{y.username}}:
+        </h4>
+        <h6>{{y.content}}</h6>
+        <cite><p class="text-right timesent">{{y.sentat}}<p><cite>
+      </blockquote>
+    </div>
+    <div class="row" ng-show="flip">
+      <blockquote class="blockquote-reverse">
+        <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
+          {{y.username}}:
+        </h4>
+        <h6>{{y.content}}</h6>
+        <cite><p class="text-right">{{y.sentat}}<p><cite>
+      </blockquote>
+    </div>
+  </div>
 </div>

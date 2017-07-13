@@ -1,14 +1,14 @@
-<section>
-    <h3>Create a room</h3>
+<section class="modal-body">
+    <h3 class="modal-header modal-title" >Create a room</h3>
     <div>
         <h5>Room Name:</h5>
         <input class="form-control" type="text" name="input" ng-model="modal.modalRoom.name" required="true">
     </div>
-    <div>
-        <button class="btn btn-default" type="button" ng-click="modal.cancel()">
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="modal.cancel()">
           Cancel
         </button>
-        <button class="btn btn-default" type="button" ng-click="modal.submit()">
+        <button class="btn btn-primary" type="button" ng-click="modal.submit()">
           Create room
         </button>
     </div>
