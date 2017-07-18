@@ -1,9 +1,11 @@
 <header class="jumbotron header">
-  <h1 class="modal-header">Bloc Chat!</h1>
+  <h1>Bloc Chat!</h1>
+  <h4 class="text-center">{{home.currentUser}}
+  <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ home.currentUser +'/30.png'" ng-src="{{avatar}}"/></h4>
 <div clas="container">
   <div class="row">
     <div ng-repeat="x in home.roomList">
-      <div class="btn btn-deafult col-xs-2" ng-click="home.setRoom(x)"><h4>{{x.name}}</h4></div>
+      <div class="btn btn-deafult col-xs-2" ng-click="home.setRoom(x)"><h4 class="room-name">{{x.name}}</h4></div>
     </div>
   </div>
   <div class="row">
@@ -17,19 +19,20 @@
     <div class="row" ng-show="!flip">
       <blockquote class="modal-header header room">
         <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
-          {{y.username}}:
+          {{y.username}}
         </h4>
         <h6>{{y.content}}</h6>
         <cite><p class="text-right timesent">{{y.sentat}}<p><cite>
       </blockquote>
     </div>
     <div class="row" ng-show="flip">
-      <blockquote class="blockquote-reverse">
-        <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
-          {{y.username}}:
+      <blockquote class="blockquote-reverse modal-header header room">
+        <h4>
+          {{y.username}}
+          <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
         </h4>
-        <h6>{{y.content}}</h6>
-        <cite><p class="text-right">{{y.sentat}}<p><cite>
+        <h6 class="text-center">{{y.content}}</h6>
+        <cite><p class="text-right timesent">{{y.sentat}}<p><cite>
       </blockquote>
     </div>
   </div>

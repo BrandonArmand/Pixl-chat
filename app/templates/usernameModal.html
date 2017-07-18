@@ -1,0 +1,15 @@
+<section class="modal-body">
+    <h3 class="modal-header modal-title" >Set a Username</h3>
+    <div>
+        <h5>Username:</h5>
+        <input class="form-control" type="text" name="input" ng-model="modal.username" required="true">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="modal.guestUsername()">
+          Guest
+        </button>
+        <button class="btn btn-primary" type="button" ng-click="modal.setUsername()">
+          Set Name
+        </button>
+    </div>
+</section>
