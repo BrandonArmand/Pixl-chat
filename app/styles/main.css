@@ -1,3 +1,7 @@
+.pixel{
+  color: rgb(255, 76, 82);
+}
+
 .header{
   padding-bottom: 0px;
   padding-top: 1px;
@@ -27,9 +31,55 @@
   height: 520px;
   overflow-y: auto;
   box-shadow: 1px 2px 20px lightgrey;
+  padding-right: 0;
+  padding-left: 0;
+  margin-bottom: 2rem;
 }
 
 .room-name{
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.row{
+  margin-right: 0;
+}
+
+.room{
+  margin-bottom: 0px;
+}
+
+.name, .name div{
+  padding: 0px;
+  padding-right: 1rem;
+  margin-top: 0px;
+}
+
+.title{
+  padding-left: 1rem;
+}
+
+.title h1{
+  margin-bottom: 0px;
+}
+
+form{
+
+}
+
+.message-input{
+  float: left;
+  width: 80%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.message-btn{
+  width: 20%;
+  height: 26px;
+  padding-top: 2px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }

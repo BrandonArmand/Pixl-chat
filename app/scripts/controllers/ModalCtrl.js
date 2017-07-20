@@ -12,11 +12,13 @@
     this.setUsername = function(){
       $cookies.put('blocChatCurrentUser', this.username);
       $uibModalInstance.close();
+      location.reload();
     };
 
     this.guestUsername = function(){
       $cookies.put('blocChatCurrentUser', 'Guest User');
       $uibModalInstance.close();
+      location.reload();
     }
   }
 

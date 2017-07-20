@@ -1,11 +1,13 @@
-<header class="jumbotron header">
-  <h1>Bloc Chat!</h1>
-  <h4 class="text-center">{{home.currentUser}}
-  <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ home.currentUser +'/30.png'" ng-src="{{avatar}}"/></h4>
+<header class="jumbotron header title">
+  <h1><span class="pixel">Bloc</span> Chat!</h1>
+  <h4 class="text-right name modal-header"><div class="btn" ng-click="home.modalName()">
+    <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ home.currentUser +'/30.png'" ng-src="{{avatar}}"/>
+    {{home.currentUser}}
+  </div></h4>
 <div clas="container">
   <div class="row">
     <div ng-repeat="x in home.roomList">
-      <div class="btn btn-deafult col-xs-2" ng-click="home.setRoom(x)"><h4 class="room-name">{{x.name}}</h4></div>
+      <div class="btn col-xs-2" ng-click="home.setRoom(x)"><h4 class="room-name">{{x.name}}</h4></div>
     </div>
   </div>
   <div class="row">
@@ -14,9 +16,9 @@
 </div>
 </header>
 <h1 class="room-title">{{home.currentRoom.name}}</h1>
-<div class="chat-room col-xs-offset-2 col-sm-8">
+<div class="chat-room col-xs-offset-2 col-sm-8" id="chat">
   <div ng-repeat="y in home.messages">
-    <div class="row" ng-show="!flip">
+    <div class="row" ng-show="home.currentUser != y.username">
       <blockquote class="modal-header header room">
         <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
           {{y.username}}
@@ -25,7 +27,7 @@
         <cite><p class="text-right timesent">{{y.sentat}}<p><cite>
       </blockquote>
     </div>
-    <div class="row" ng-show="flip">
+    <div class="row" ng-show="home.currentUser == y.username">
       <blockquote class="blockquote-reverse modal-header header room">
         <h4>
           {{y.username}}
@@ -37,3 +39,7 @@
     </div>
   </div>
 </div>
+<form class="col-xs-offset-2 col-sm-8">
+  <input type="text" name="input" placeholder="Send message" class="message-input" ng-model="home.newMessage.content">
+  <button class="btn btn-primary message-btn" name="input" type="button" ng-click="home.sendMessage()">Send</button>
+</form>
