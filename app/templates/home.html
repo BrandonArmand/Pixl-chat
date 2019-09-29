@@ -1,7 +1,7 @@
 <header class="jumbotron header title">
   <h1><span class="pixel">Pix'L!</span> Chat</h1>
   <h4 class="text-right name modal-header"><div class="btn" ng-click="home.modalName()">
-    <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ home.currentUser +'/30.png'" ng-src="{{avatar}}"/>
+    <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ home.currentUser +'/30.svg'" ng-src="{{avatar}}"/>
     {{home.currentUser}}
   </div></h4>
 <div clas="container">
@@ -20,7 +20,7 @@
   <div ng-repeat="y in home.messages">
     <div class="row" ng-show="home.currentUser != y.username">
       <blockquote class="modal-header header room">
-        <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
+        <h4><img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.svg'" ng-src="{{avatar}}"/>
           {{y.username}}
         </h4>
         <h6>{{y.content}}</h6>
@@ -31,7 +31,7 @@
       <blockquote class="blockquote-reverse modal-header header room">
         <h4>
           {{y.username}}
-          <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.png'" ng-src="{{avatar}}"/>
+          <img ng-value="avatar = 'https://avatars.dicebear.com/v1/male/'+ y.username +'/50.svg'" ng-src="{{avatar}}"/>
         </h4>
         <h6 class="text-center">{{y.content}}</h6>
         <cite><p class="text-right timesent">{{y.sentat}}<p><cite>
